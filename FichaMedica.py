@@ -4,14 +4,17 @@ class FichaMedica:
         self.fecha = fecha
         self.veterinario = veterinario
         self.estado = 0
-        self.raza = raza
-        self.ficha_medica = ficha_medica
+        self.tratamiento = tratamiento
+        self.vacuna = vacuna
+        self.consulta = consulta
+        self.obsevarcion = observacion
+        self.fecha_alta = fecha_alta
 
     def __str__(self):
-        return f"{self.nombre}{self.fecha_nac}{self.cliente}{self.raza}{self.ficha_medica}"
+        return f"{self.mascota}{self.fecha}{self.veterinario}{self.estado}{self.tratamiento}{self.vacuna}{self.consulta}{self.obsevarcion}{self.fecha_alta}"
 
     def __repr__(self):
-        return f"{self.nombre}{self.fecha_nac}{self.cliente}{self.raza}{self.ficha_medica}"
+        return f"{self.mascota}{self.fecha}{self.veterinario}{self.estado}{self.tratamiento}{self.vacuna}{self.consulta}{self.obsevarcion}{self.fecha_alta}"
 
     def dar_alta(self):
         self.estado = 1
@@ -24,12 +27,27 @@ class FichaMedica:
 
     def modificar_datos(self, posicion, dato):
         if posicion == "0":
-            self.nombre = dato
+            self.mascota = dato
         elif posicion == "1":
-            self.fecha_nac = dato
+            self.fecha = dato
         elif posicion == "2":
-            self.raza = dato
+            self.veterinario = dato
         elif posicion == "3":
-            self.cliente = dato
+            self.tratamiento = dato
         elif posicion == "4":
-            self.ficha_medica = dato
+            self.vacuna = dato
+        elif posicion == "5":
+            self.consulta = dato
+        elif posicion == "6":
+            self.obsevarcion = dato
+        elif posicion == "7":
+            self.fecha_alta = dato
+
+    def cargar_ficha(self):
+        pass
+
+    def buscar_mascota(self):
+        pass
+
+    def ver_consultas(self):
+        pass
