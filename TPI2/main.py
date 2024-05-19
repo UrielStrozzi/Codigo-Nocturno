@@ -97,51 +97,50 @@ def main():
     18- Gestionar fichas médicas
     """
     try:
-        while True:
-            print(opciones)
-            opcion = int(input("Ingrese el número de la opción que desea realizar: "))
+        print(opciones)
+        opcion = int(input("Ingrese el número de la opción que desea realizar: "))
 
-            # OPCIONES DE CLIENTES Y VETERINARIOS
-            if opcion == 1:
-                ver_lista_mascotas_activas()
-            elif opcion == 2:
-                ver_lista_tratamientos()
-            elif opcion == 3:
-                ver_lista_diagnostico()
-            elif opcion == 4:
-                ver_lista_vacunas()
-            elif opcion == 5:
-                ver_lista_razas()
-            elif opcion == 6:
-                ver_lista_veterinarios()
-            elif opcion == 7:
-                ver_lista_clientes()
-            elif opcion == 8:
-                calcularCantMascXCliente()
-            elif opcion == 9:
-                calcularCantConsulXMascot()
-            elif opcion == 10:
-                calcular_tratam_aplicados()
-            elif opcion == 11:
-                calcularRankingDiagnos()
-            elif opcion == 12:
-                calcularCantRazasXDiagnos()
+        # OPCIONES DE CLIENTES Y VETERINARIOS
+        if opcion == 1:
+            ver_lista_mascotas_activas()
+        elif opcion == 2:
+            ver_lista_tratamientos()
+        elif opcion == 3:
+            ver_lista_diagnostico()
+        elif opcion == 4:
+            ver_lista_vacunas()
+        elif opcion == 5:
+            ver_lista_razas()
+        elif opcion == 6:
+            ver_lista_veterinarios()
+        elif opcion == 7:
+            ver_lista_clientes()
+        elif opcion == 8:
+            calcularCantMascXCliente()
+        elif opcion == 9:
+            calcularCantConsulXMascot()
+        elif opcion == 10:
+            calcular_tratam_aplicados()
+        elif opcion == 11:
+            calcularRankingDiagnos()
+        elif opcion == 12:
+            calcularCantRazasXDiagnos()
 
-            # OPCIONES DEL PROGRAMADOR y VETERINARIOS
-            elif opcion == 13:
-                gestionar_razas()
-            elif opcion == 14:
-                gestionar_mascotas()
-            elif opcion == 15:
-                gestionar_personas()
-            elif opcion == 16:
-                gestionar_diagnosticos()
-            elif opcion == 17:
-                gestionar_tratamientos()
-            elif opcion == 18:
-                gestionar_fichas_medicas()
-            else:
-                print("Ingrese una opción correcta.")
+        # OPCIONES DEL PROGRAMADOR y VETERINARIOS
+        elif opcion == 13:
+            gestionar_razas()
+        elif opcion == 14:
+            gestionar_mascotas()
+        elif opcion == 15:
+            gestionar_personas()
+        elif opcion == 16:
+            gestionar_diagnosticos()
+        elif opcion == 17:
+            gestionar_tratamientos()
+        elif opcion == 18:
+            gestionar_fichas_medicas()
+        else:
+            print("Ingrese una opción correcta.")
 
     except ValueError:
         print("Error. Intente nuevamente")
