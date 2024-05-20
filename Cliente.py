@@ -41,4 +41,3 @@ class Cliente(Persona):
 
     def consultar_cant_mascotas(self):
         pass
-
