@@ -30,5 +30,6 @@ class Persona:
             self.direccion = dato
         elif posicion == "3":
             self.telefono = dato
+
     def ver_lista_diagnostico(self):
         pass

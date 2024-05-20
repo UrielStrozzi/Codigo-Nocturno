@@ -3,7 +3,7 @@ import Persona
 
 class Veterinario(Persona):
     def __init__(self, nombre, apellido, direccion, telefono, especializacion, nro_matricula):
-        super.__init__(nombre, apellido, direccion, telefono)
+        super().__init__(nombre, apellido, direccion, telefono)
         self.especializacion = especializacion
         self.nro_matricula = nro_matricula
 

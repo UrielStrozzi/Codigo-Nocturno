@@ -1,17 +1,16 @@
 import Persona
 
 
-class Veterinario(Persona):
-    def __init__(self, nombre, apellido, direccion, telefono, especializacion, nro_matricula):
-        super.__init__(nombre, apellido, direccion, telefono)
-        self.especializacion = especializacion
-        self.nro_matricula = nro_matricula
+class Cliente(Persona):
+    def __init__(self, nombre, apellido, direccion, telefono, nro_mascota):
+        super().__init__(nombre, apellido, direccion, telefono)
+        self.nro_mascota = nro_mascota
 
     def __str__(self):
-        return f"{self.nombre}{self.apellido}{self.direccion}{self.estado}{self.telefono}{self.especializacion}{self.nro_matricula}"
+        return f"{self.nombre}{self.apellido}{self.direccion}{self.estado}{self.telefono}{self.nro_mascota}"
 
     def __repr__(self):
-        return f"{self.nombre}{self.apellido}{self.direccion}{self.estado}{self.telefono}{self.especializacion}{self.nro_matricula}"
+        return f"{self.nombre}{self.apellido}{self.direccion}{self.estado}{self.telefono}{self.nro_mascota}"
 
     def dar_alta(self):
         self.estado = 1
@@ -32,12 +31,13 @@ class Veterinario(Persona):
         elif posicion == "3":
             self.telefono = dato
         elif posicion == "4":
-            self.especializacion = dato
-        elif posicion == "5":
-            self.nro_matricula = dato
+            self.nro_mascota = dato
 
-    def mostrar_veterinario(self):
+    def mostrar_cliente(self):
         pass
 
-    def ver_lista_veterinario(self):
+    def ver_lista_clientes(self):
+        pass
+
+    def consultar_cant_mascotas(self):
         pass
