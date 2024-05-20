@@ -8,10 +8,10 @@ class Mascota:
         self.ficha_medica = ficha_medica
 
     def __str__(self):
-        return f"{self.nombre}{self.fecha_nac}{self.cliente}{self.raza}{self.ficha_medica}"
+        return f"{self.nombre}{self.estado}{self.fecha_nac}{self.cliente}{self.raza}{self.ficha_medica}"
 
     def __repr__(self):
-        return f"{self.nombre}{self.fecha_nac}{self.cliente}{self.raza}{self.ficha_medica}"
+        return f"{self.nombre}{self.estado}{self.fecha_nac}{self.cliente}{self.raza}{self.ficha_medica}"
 
     def dar_alta(self):
         self.estado = 1
