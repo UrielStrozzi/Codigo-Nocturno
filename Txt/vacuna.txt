@@ -1,0 +1,8 @@
+pfizer,c,12040,1
+moderna,c,14050,1
+astrazeneca,c,11500,1
+johnson&johnson,c,13500,1
+sinovac,d,12500,1
+sputnik,a,11000,1
+novavax,b,13000,1
+curevac,c,14500,1
