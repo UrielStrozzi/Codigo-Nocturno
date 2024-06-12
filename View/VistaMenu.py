@@ -1,0 +1,68 @@
+class VistaMenu:
+    def mostrarmensaje(self, menu):
+        if menu == 0:
+            print("Cerrando programa")
+        elif menu == 1:
+            print("Ver lista de mascotas activas")
+        elif menu == 2:
+            print("Ver lista de tratamientos")
+        elif menu == 3:
+            print("Ver lista de diagnósticos")
+        elif menu == 4:
+            print("Ver lista de vacunas")
+        elif menu == 5:
+            print("Ver lista de razas")
+        elif menu == 6:
+            print("Ver lista de veterinarios")
+        elif menu == 7:
+            print("Ver lista de clientes")
+        elif menu == 8:
+            print("Calcular cantidad de mascotas por cliente")
+        elif menu == 9:
+            print("Calcular cantidad de consultas por mascota")
+        elif menu == 10:
+            print("Calcular tratamientos aplicados")
+        elif menu == 11:
+            print("Calcular ranking de diagnósticos")
+        elif menu == 12:
+            print("Calcular cantidad de razas por diagnóstico")
+        elif menu == 13:
+            print("Gestionar razas\n1-Agregar Raza-\n2-Modificar Raza.\n3-Dar de baja raza.")
+
+        elif menu == 14:
+            print("Gestionar mascotas")
+        elif menu == 15:
+            print("Gestionar personas")
+        elif menu == 16:
+            print("Gestionar diagnósticos")
+        elif menu == 17:
+            print("Gestionar tratamientos")
+        elif menu == 18:
+            print("Gestionar fichas médicas")
+        elif menu == 19:
+            print("Gestionar vacuna\n1-Agregar vacuna\n2-Modificar vacuna\n3-Dar de baja vacuna.")
+        else:
+            print("Ingrese una opción correcta.")
+
+    def solicitaropcion(self):
+        return int(input("Ingrese la opcion: "))
+
+    def mostraropciones(self):
+        print("1- Ver lista de mascotas activas\n"
+              "2- Ver lista de tratamientos\n"
+              "3- Ver lista de diagnósticos\n"
+              "4- Ver lista de vacunas\n"
+              "5- Ver lista de razas\n"
+              "6- Ver lista de veterinarios\n"
+              "7- Ver lista de clientes\n"
+              "8- Calcular cantidad de mascotas por cliente\n"
+              "9- Calcular cantidad de consultas por mascota\n"
+              "10- Calcular tratamientos aplicados\n"
+              "11- Calcular ranking de diagnósticos\n"
+              "12- Calcular cantidad de razas por diagnóstico\n"
+              "13- Gestionar razas\n"
+              "14- Gestionar mascotas\n"
+              "15- Gestionar personas\n"
+              "16- Gestionar diagnósticos\n"
+              "17- Gestionar tratamientos\n"
+              "18- Gestionar fichas médicas")

@@ -1,16 +1,16 @@
 class Raza:
-    def __init__(self, nombre, colores_tipicos, tamaño, pelaje):
+    def __init__(self, nombre:str, colores_tipicos:str, tamano:str, pelaje:str, estado: int = 0):
         self.nombre = nombre
         self.colores_tipicos = colores_tipicos
-        self.tamaño = tamaño
+        self.tamano = tamano
         self.pelaje = pelaje
-        self.estado = 0
+        self.estado = estado
 
     def __str__(self):
-        return f"{self.nombre}{self.colores_tipicos}{self.tamaño}{self.pelaje}{self.estado}"
+        return f"{self.nombre},{self.colores_tipicos},{self.tamano},{self.pelaje},{self.estado}"
 
     def __repr__(self):
-        return f"{self.nombre}{self.colores_tipicos}{self.tamaño}{self.pelaje}{self.estado}"
+        return f"{self.nombre},{self.colores_tipicos},{self.tamano},{self.pelaje},{self.estado}"
 
     def dar_alta(self):
         self.estado = 1
@@ -27,9 +27,8 @@ class Raza:
         elif posicion == "1":
             self.colores_tipicos = dato
         elif posicion == "2":
-            self.tamaño = dato
+            self.tamano = dato
         elif posicion == "3":
             self.pelaje = dato
 
-    def ver_razas(self):
-        pass
+
