@@ -1,23 +1,30 @@
 class Diagnostico:
-    def __init__(self, tipo="", estado=0,descripcion=[]):
+    def __init__(self, codigo:int, tipo:str,descripcion:list,estado:int=0):
+        self.codigo = codigo
         self.tipo = tipo
-        self.estado = estado
         self.descripcion = descripcion
+        self.estado = estado
 
     def __str__(self):
-        return f"{self.tipo} {self.estado}"
+        return f"{self.codigo},{self.tipo},{self.descripcion}"
 
     def __repr__(self):
-        return f"{self.tipo} {self.estado}"
-
-    def dar_baja(self, estado):
-        pass
-
-    def modificar(self):
-        pass
+        return f"{self.codigo},{self.tipo},{self.descripcion}"
 
     def dar_alta(self):
-        pass
+        self.estado = 1
+
+    def dar_baja(self):
+        self.estado = 0
+
+    def modificar_datos(self, posicion, dato):
+        if posicion == "1":
+            self.codigo = dato
+        elif posicion == "2":
+            self.tipo = dato
+        elif posicion == "3":
+            self.descripcion = dato
+
 
     def calcularRankingDiagnostico(self):
         pass
