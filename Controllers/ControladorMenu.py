@@ -1,12 +1,13 @@
 from View.VistaMenu import VistaMenu
 from Controllers.ControladorRaza import ControladorRaza
 from Controllers.ControladorVacuna import ControladorVacuna
-
+from Controllers.ControladorDiagonostico import ControladorDiagnostico
 class ControladorMenu:
     def __init__(self):
         self.vista = VistaMenu()
         self.controldorraza = ControladorRaza()
         self.controladorvacuna = ControladorVacuna()
+        self.controladordiagnostico = ControladorDiagnostico()
 
 
     def iniciar(self):
@@ -15,7 +16,9 @@ class ControladorMenu:
             self.vista.mostraropciones()
             menu = self.vista.solicitaropcion()
             if menu == 0:
-                pass
+                self.vista.mostrarmensaje(0)
+            elif menu == 3:
+                self.controladordiagnostico.ver_lista_diagnostico()
             elif menu == 4:
                 self.controladorvacuna.ver_lista_vacuna()
             elif menu == 5:
@@ -29,6 +32,16 @@ class ControladorMenu:
                     self.controldorraza.modificarraza()
                 elif menu == 3:
                     self.controldorraza.eliminarraza()
+                self.controldorraza.guardarrazas()
+            elif menu == 16:
+                self.vista.mostrarmensaje(menu)
+                menu = self.vista.solicitaropcion()
+                if menu == 1:
+                    self.controladordiagnostico.agregardiagnostico()
+                elif menu == 2:
+                    self.controladordiagnostico.modificardiagnostico()
+                elif menu == 3:
+                    self.controladordiagnostico.eliminardiagnostico()
 
             elif menu == 19:
                 self.vista.mostrarmensaje(menu)
@@ -39,6 +52,9 @@ class ControladorMenu:
                     self.controladorvacuna.modificarvacuna()
                 elif menu == 3:
                     self.controladorvacuna.eliminarvacuna()
+
+
+
             """elif menu == 1:
                 ver_lista_mascotas_activas()
             elif menu == 2:
@@ -68,8 +84,7 @@ class ControladorMenu:
                 gestionar_mascotas()
             elif menu == 15:
                 gestionar_personas()
-            elif menu == 16:
-                gestionar_diagnosticos()
+            
             elif menu == 17:
                 gestionar_tratamientos()
             elif menu == 18:

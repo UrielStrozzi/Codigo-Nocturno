@@ -48,11 +48,11 @@ class ControladorRaza:
             self.vista.mostrarmensaje(8)
 
     def guardarrazas(self):
-        file = open("raza.txt", "w")
         guardado = ""
         for raza in self.listarazas:
             guardado += f"{raza}\n"
-        file.write(guardado[0:-2])
+        file = open("Txt/raza.txt", "r+")
+        file.write(guardado[0:-1])
         file.close()
 
     def ver_lista_razas(self):

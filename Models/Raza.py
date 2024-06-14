@@ -1,5 +1,5 @@
 class Raza:
-    def __init__(self, nombre:str, colores_tipicos:str, tamano:str, pelaje:str, estado: int = 0):
+    def __init__(self, nombre:str, colores_tipicos:str, tamano:str, pelaje:str, estado = 0):
         self.nombre = nombre
         self.colores_tipicos = colores_tipicos
         self.tamano = tamano
@@ -30,5 +30,3 @@ class Raza:
             self.tamano = dato
         elif posicion == "3":
             self.pelaje = dato
-
-

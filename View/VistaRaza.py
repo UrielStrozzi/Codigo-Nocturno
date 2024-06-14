@@ -38,5 +38,5 @@ class VistaRaza:
         return input()
 
     def solicitarvalorcambio(self):
-        print("Ingrese el valor del cambio: ")
+        return input("Ingrese el valor del cambio: ")
 
