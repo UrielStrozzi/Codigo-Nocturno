@@ -36,7 +36,7 @@ class VistaMenu:
         elif menu == 16:
             print("Gestionar Diagnostico\n1-Agregar Diagnostico\n2-Modificar Diagnostico.\n3-Dar de baja Diagnostico.")
         elif menu == 17:
-            print("Gestionar tratamientos")
+            print("Gestionar Tratamientos\n1-Agregar Tratamiento-\n2-Modificar Tratamiento.\n3-Dar de baja Tratamiento.")
         elif menu == 18:
             print("Gestionar fichas médicas")
         elif menu == 19:

@@ -1,4 +1,4 @@
-01,severo,el perro tenía sarna,1
-02,leve,gato con resfriado,0
-03,moderado,el caballo presenta cojera en una pata,0
-04,grave,el conejo tiene una infección ocular severa,1
+01,severo,el perro tenía sarna
+02,leve,gato con resfriado
+03,moderado,el caballo presenta cojera en una pata
+04,grave,el conejo tiene una infección ocular severa
