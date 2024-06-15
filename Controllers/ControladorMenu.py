@@ -1,6 +1,7 @@
 from View.VistaMenu import VistaMenu
 from Controllers.ControladorRaza import ControladorRaza
 from Controllers.ControladorVacuna import ControladorVacuna
+from Controllers.ControladorTratamiento import ControladorTratamiento
 from Controllers.ControladorDiagonostico import ControladorDiagnostico
 class ControladorMenu:
     def __init__(self):
@@ -8,7 +9,7 @@ class ControladorMenu:
         self.controldorraza = ControladorRaza()
         self.controladorvacuna = ControladorVacuna()
         self.controladordiagnostico = ControladorDiagnostico()
-
+        self.controladortratamiento = ControladorTratamiento()
 
     def iniciar(self):
         menu = -1
@@ -17,12 +18,19 @@ class ControladorMenu:
             menu = self.vista.solicitaropcion()
             if menu == 0:
                 self.vista.mostrarmensaje(0)
+
+            elif menu == 2:
+                self.controladortratamiento.ver_lista_tratamiento()
+
             elif menu == 3:
                 self.controladordiagnostico.ver_lista_diagnostico()
+
             elif menu == 4:
                 self.controladorvacuna.ver_lista_vacuna()
+
             elif menu == 5:
                 self.controldorraza.ver_lista_razas()
+
             elif menu == 13:
                 self.vista.mostrarmensaje(menu)
                 menu = self.vista.solicitaropcion()
@@ -42,7 +50,18 @@ class ControladorMenu:
                     self.controladordiagnostico.modificardiagnostico()
                 elif menu == 3:
                     self.controladordiagnostico.eliminardiagnostico()
+                self.controladordiagnostico.guardardiagnostico()
 
+            elif menu == 17:
+                self.vista.mostrarmensaje(menu)
+                menu = self.vista.solicitaropcion()
+                if menu == 1:
+                    self.controladortratamiento.agregartratamiento()
+                elif menu == 2:
+                    self.controladortratamiento.modificartratamiento()
+                elif menu == 3:
+                    self.controladortratamiento.eliminartratamiento()
+                self.controladortratamiento.guardartratamiento()
             elif menu == 19:
                 self.vista.mostrarmensaje(menu)
                 menu = self.vista.solicitaropcion()
@@ -54,11 +73,9 @@ class ControladorMenu:
                     self.controladorvacuna.eliminarvacuna()
 
 
-
             """elif menu == 1:
                 ver_lista_mascotas_activas()
-            elif menu == 2:
-                ver_lista_tratamientos()
+            
             elif menu == 3:
                 ver_lista_diagnostico()
             
@@ -85,8 +102,7 @@ class ControladorMenu:
             elif menu == 15:
                 gestionar_personas()
             
-            elif menu == 17:
-                gestionar_tratamientos()
+    
             elif menu == 18:
                 gestionar_fichas_medicas()"""
             """else:

@@ -8,6 +8,16 @@ class ControladorDiagnostico:
         self.listadiagnostico: list[Diagnostico] = []
         self.cargardiagnostico()
 
+    def cargardiagnostico(self):
+        try:
+            file = open("Txt/diagnostico.txt")
+            for line in file:
+                var1 = line.strip().split(",")
+                self.listadiagnostico.append(Diagnostico(var1[0],var1[1],var1[2]))
+            file.close()
+        except FileExistsError or FileNotFoundError:
+            self.vista.mostrarmensaje(8)
+
     def agregardiagnostico(self):
         self.listadiagnostico.append(Diagnostico(self.vista.solicitarcodigo(),self.vista.solicitartipo(), self.vista.solicitardescripcion()))
         self.listadiagnostico[-1].dar_alta()
@@ -40,21 +50,15 @@ class ControladorDiagnostico:
                 return
         self.vista.mostrarmensaje(7)
 
-    def cargardiagnostico(self):
-        try:
-            file = open("Txt/diagnostico.txt")
-            for line in file:
-                var1 = line.strip().split(",")
-                self.listadiagnostico.append(Diagnostico(var1[0],var1[1],var1[2],var1[3]))
-            file.close()
-        except FileExistsError or FileNotFoundError:
-            self.vista.mostrarmensaje(8)
+
+
 
     def guardardiagnostico(self):
-        file = open("diagnostico.txt", "w")
         guardado = ""
         for diagnostico in self.listadiagnostico:
             guardado += f"{diagnostico}\n"
-        file.write(guardado[0:-2])
+        file = open("Txt/diagnostico.txt", "r+")
+        file.write(guardado[0:-1])
         file.close()
+
 
