@@ -1,0 +1,6 @@
+01,A,4 gotas al día cada 8 hs,1
+02,B,1 comprimido al día en ayunas,1
+03,C,2 cápsulas cada 12 hs después de las comidas,1
+04,D,una inyección intramuscular semanal,1
+05,E,10 ml de jarabe cada 6 hs,1
+6,3,2,0

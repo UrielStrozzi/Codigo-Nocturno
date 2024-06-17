@@ -1,0 +1,5 @@
+1,Clínico,Diagnóstico clínico general,1
+2,Patológico,Diagnóstico patológico específico,1
+3,Imágenes,Diagnóstico por imágenes,0
+4,Genético,Diagnóstico genético,1
+5,Biomédico,Diagnóstico biomédico avanzado,0
