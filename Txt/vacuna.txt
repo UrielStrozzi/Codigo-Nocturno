@@ -1,8 +1,10 @@
-pfizer,c,12040,1
-moderna,c,14050,1
-astrazeneca,c,11500,1
-johnson&johnson,c,13500,1
-sinovac,d,12500,1
-sputnik,a,11000,1
-novavax,b,13000,1
-curevac,c,14500,1
+1,Rabia,Antiviral,50.0,1
+2,Parvovirus,Antiviral,45.0,1
+3,Moquillo,Antiviral,55.0,1
+4,Hepatitis Canina,Antiviral,40.0,0
+5,Leptospirosis,Antibacteriana,30.0,1
+6,Coronavirus,Antiviral,35.0,0
+7,Tos de las Perreras,Antibacteriana,25.0,1
+8,Parainfluenza,Antiviral,20.0,0
+9,Leishmaniasis,Antiparasitaria,60.0,1
+10,Giardia,Antiparasitaria,50.0,1

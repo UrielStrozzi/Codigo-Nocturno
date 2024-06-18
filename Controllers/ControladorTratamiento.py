@@ -1,6 +1,7 @@
 from Models.Tratamiento import Tratamiento
 from View.VistaTratamiento import VistaTratamiento
 
+
 class ControladorTratamiento:
     def __init__(self):
         self.vista = VistaTratamiento()
@@ -14,7 +15,7 @@ class ControladorTratamiento:
         self.listatratamiento.append(tratamiento)
         self.vista.mostrarmensaje(1)
 
-    def ver_lista_tratamiento(self):
+    def ver_lista_tratamientos(self):
         self.vista.mostrartratamiento(self.listatratamiento)
 
     def modificartratamiento(self):
@@ -27,7 +28,6 @@ class ControladorTratamiento:
                 nuevo_valor = self.vista.solicitarvalorcambio()
                 tratamiento.modificar_datos(cambio, nuevo_valor)
                 self.vista.mostrarmensaje(3)
-                return
         self.vista.mostrarmensaje(4)
 
     def eliminartratamiento(self):
@@ -38,7 +38,6 @@ class ControladorTratamiento:
             if tratamiento.codigo == codigotratamiento:
                 tratamiento.dar_baja()
                 self.vista.mostrarmensaje(6)
-                return
         self.vista.mostrarmensaje(7)
 
     def cargartratamiento(self):
@@ -48,7 +47,7 @@ class ControladorTratamiento:
                     var1 = line.strip().split(",")
                     if len(var1) >= 4:  # Asegúrate de que hay suficientes elementos
                         estado = int(var1[3]) if len(var1) > 3 else 0
-                        self.listatratamiento.append(Tratamiento(var1[0], var1[1], var1[2], estado))
+                        self.listatratamiento.append(Tratamiento(int(var1[0]), var1[1], var1[2], estado))
                     else:
                         print(f"Advertencia: Línea de tratamiento incompleta: {line.strip()}")
         except (FileExistsError, FileNotFoundError):

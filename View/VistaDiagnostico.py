@@ -1,14 +1,13 @@
 class VistaDiagnostico:
-
     def solicitarcodigo(self):
         return input("Ingrese el codigo del diagnostico: ")
     def solicitartipo(self):
-        return input("ingrese el tipo (grave-severo-moderado-leve) de la diagnostico: ")
+        return input("Ingrese el tipo de diagnóstico (leve, moderado, severo, grave): ")
 
     def solicitardescripcion(self):
         return input("ingrese la descripcion de la diagnostico: ")
 
-    def mostrarmensaje(self,numero):
+    def mostrarmensaje(self, numero):
         if numero == 1:
             print("Diagnostico creada con exito")
         elif numero == 2:

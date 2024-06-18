@@ -1,0 +1,6 @@
+1,Carlos,Salgado,Rocket 921,3233225325,0
+2,María,Pérez,Libertad 123,3244225325,0
+3,Juan,González,San Martín 456,3255225325,1
+4,Laura,Méndez,Avenida Siempre Viva 742,3266225325,0
+5,Pedro,Fernández,Colón 789,3277225325,1
+6,Ana,Lopez,Los Pinos 101,3288225325,53255,0

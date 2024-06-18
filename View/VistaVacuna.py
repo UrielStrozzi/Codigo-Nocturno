@@ -3,7 +3,7 @@ class VistaVacuna:
     def mostrarvacunas(self, lista):
         for vacuna in lista:
             print(vacuna)
-    def mostrarmensaje(self,numero):
+    def mostrarmensaje(self, numero):
         if numero == 1:
             print("Vacuna agregada con exito.")
         elif numero == 2:

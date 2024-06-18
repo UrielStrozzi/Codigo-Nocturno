@@ -1,17 +1,17 @@
 class Mascota:
-    def __init__(self, nombre, fecha_nac, cliente, raza, ficha_medica):
+    def __init__(self, nro: int, nombre: str, fecha_nac: str, cliente: int, raza: int, estado: int = 0):
+        self.nro = nro
         self.nombre = nombre
-        self.estado = 0
         self.fecha_nac = fecha_nac
-        self.cliente = cliente
-        self.raza = raza
-        self.ficha_medica = ficha_medica
+        self.nrocliente = cliente
+        self.nroraza = raza
+        self.estado = estado
 
     def __str__(self):
-        return f"{self.nombre}{self.estado}{self.fecha_nac}{self.cliente}{self.raza}{self.ficha_medica}"
+        return f"{self.nro},{self.nombre},{self.fecha_nac},{self.cliente},{self.raza},{self.estado}"
 
     def __repr__(self):
-        return f"{self.nombre}{self.estado}{self.fecha_nac}{self.cliente}{self.raza}{self.ficha_medica}"
+        return f"{self.__str__()}"
 
     def dar_alta(self):
         self.estado = 1
@@ -23,22 +23,13 @@ class Mascota:
         return self.estado
 
     def modificar_datos(self, posicion, dato):
-        if posicion == "0":
-            self.nombre = dato
-        elif posicion == "1":
-            self.fecha_nac = dato
+        if posicion == "1":
+            self.nro = dato
         elif posicion == "2":
-            self.raza = dato
+            self.nombre = dato
         elif posicion == "3":
-            self.cliente = dato
+            self.fecha_nac = dato
         elif posicion == "4":
-            self.ficha_medica = dato
-
-    def conocer_raza(self):
-        pass
-
-    def calcular_edad(self):
-        pass
-
-    def registrar(self):
-        pass
+            self.raza = dato
+        elif posicion == "5":
+            self.cliente = dato

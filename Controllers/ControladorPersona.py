@@ -1,5 +1,7 @@
-from ..View.VistaMascota import VistaMascota
-from ..Models.Mascota import Mascota
+from View.VistaMascota import VistaMascota
+from Models.Mascota import Mascota
+
+
 class ControladorPersona():
     def __init__(self):
         self.vista = VistaMascota()

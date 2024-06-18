@@ -28,19 +28,20 @@ class VistaMenu:
             print("Calcular cantidad de razas por diagnóstico")
         elif menu == 13:
             print("Gestionar razas\n1-Agregar Raza-\n2-Modificar Raza.\n3-Dar de baja raza.")
-
         elif menu == 14:
-            print("Gestionar mascotas")
+            print("Gestionar mascotas\n1-Agregar mascotas-\n2-Modificar mascotas.\n3-Dar de baja mascotas.")
         elif menu == 15:
-            print("Gestionar personas")
+            print("Gestionar clientes\n1-Agregar cliente-\n2-Modificar cliente.\n3-Dar de baja cliente.")
         elif menu == 16:
             print("Gestionar Diagnostico\n1-Agregar Diagnostico\n2-Modificar Diagnostico.\n3-Dar de baja Diagnostico.")
         elif menu == 17:
             print("Gestionar Tratamientos\n1-Agregar Tratamiento-\n2-Modificar Tratamiento.\n3-Dar de baja Tratamiento.")
         elif menu == 18:
-            print("Gestionar fichas médicas")
+            print("Gestionar vacuna\n1-Agregar vacuna\n2-Modificar vacuna\n3-Dar de baja vacuna")
         elif menu == 19:
-            print("Gestionar vacuna\n1-Agregar vacuna\n2-Modificar vacuna\n3-Dar de baja vacuna.")
+            print("Gestionar Ficha Medica\n1-Agregar Ficha Medica\n2-Modificar Ficha Medica\n3-Dar de baja Ficha Medica")
+        elif menu == 20:
+            print("Gestionar consulta\n1-Agregar Consulta\n2-Modificar Consulta\n3-Cerrar Consulta")
         else:
             print("Ingrese una opción correcta.")
 
@@ -65,4 +66,6 @@ class VistaMenu:
               "15- Gestionar personas\n"
               "16- Gestionar diagnósticos\n"
               "17- Gestionar tratamientos\n"
-              "18- Gestionar fichas médicas")
+              "18- Gestionar vacunas\n"
+              "19- Gestionar fichas médicas"
+              "\n20- Gestionar consultas")
