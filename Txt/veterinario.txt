@@ -1,0 +1,8 @@
+12345,Carlos,Salgado,Independencia 921,3233225325,Especialización en animales pequeños,1
+6789,María,Pérez,Libertad 123,3244225325,Especialización en cirugía veterinaria,0
+5432,Juan,González,San Martín 456,3255225325,Especialización en dermatología veterinaria,1
+9876,Laura,Méndez,Avenida Siempre Viva 742,3266225325,Especialización en cardiología veterinaria,1
+4567,Pedro,Fernández,Colón 789,3277225325,Especialización en oftalmología veterinaria,0
+7890,Ana,Lopez,Los Pinos 101,3288225325,Especialización en oncología veterinaria,1
+11223,Luis,Ramírez,El Bosque 202,3299225325,Especialización en neurología veterinaria,0
+9988,Elena,Martínez,La Selva 303,3300225325,Especialización en medicina interna,1

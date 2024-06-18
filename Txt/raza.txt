@@ -1,0 +1,10 @@
+1,Labrador Retriever,Amarillo,Mediano,Corto,1
+2,Golden Retriever,Dorado,Grande,Largo,1
+3,Poodle,Blanco,Pequeño,Rizado,0
+4,Bulldog,Atigrado,Mediano,Corto,0
+5,Pastor Alemán,Negro y Marrón,Grande,Denso,1
+6,Beagle,Tricolor,Mediano,Corto,1
+7,Chihuahua,Marrón,Pequeño,Corto,0
+8,Siberian Husky,Gris y Blanco,Grande,Doble capa,1
+9,Dachshund,Marrón y Negro,Pequeño,Corto,0
+10,Rottweiler,Negro y Marrón,Grande,Denso,1
