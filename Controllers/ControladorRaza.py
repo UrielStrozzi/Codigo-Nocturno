@@ -9,7 +9,7 @@ class ControladorRaza:
         self.cargarrazas()
 
     def agregarraza(self):
-        self.listarazas.append(Raza(self.vista.solicitarnombre(), self.vista.solicitarcolor(), self.vista.solicitartamano(), self.vista.solicitarpelaje()))
+        self.listarazas.append(Raza(self.vista.solicitarnro(),self.vista.solicitarnombre(), self.vista.solicitarcolor(), self.vista.solicitartamano(), self.vista.solicitarpelaje()))
         self.listarazas[-1].dar_alta()
         self.vista.mostrarmensaje(1)
 
@@ -23,7 +23,6 @@ class ControladorRaza:
                 nuevo_valor = self.vista.solicitarvalorcambio()
                 raza.modificar_datos(cambio, nuevo_valor)
                 self.vista.mostrarmensaje(3)
-                return
         self.vista.mostrarmensaje(4)
 
     def eliminarraza(self):
@@ -34,7 +33,6 @@ class ControladorRaza:
             if raza.nombre == nombreraza:
                 self.listarazas[self.listarazas.index(raza)].dar_baja()
                 self.vista.mostrarmensaje(6)
-                return
         self.vista.mostrarmensaje(7)
 
     def cargarrazas(self):
@@ -42,7 +40,7 @@ class ControladorRaza:
             file = open("Txt/raza.txt")
             for line in file:
                 var1 = line.strip().split(",")
-                self.listarazas.append(Raza(var1[0], var1[1], var1[2], var1[3], var1[4]))
+                self.listarazas.append(Raza(int(var1[0]), var1[1], var1[2], var1[3], var1[4]))
             file.close()
         except FileExistsError or FileNotFoundError:
             self.vista.mostrarmensaje(8)

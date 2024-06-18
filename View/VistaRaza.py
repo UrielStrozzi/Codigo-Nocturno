@@ -2,6 +2,9 @@ class VistaRaza:
     def solicitarnombre(self):
         return input("ingrese el nombre de la raza: ")
 
+    def solicitarnro(self):
+        return int(input("ingrese el nro de la raza: "))
+
     def solicitarcolor(self):
         return input("ingrese el color de la raza: ")
 

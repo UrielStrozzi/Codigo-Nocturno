@@ -23,7 +23,6 @@ class ControladorVacuna:
                 nuevo_valor = self.vista.solicitarvalorcambio()
                 vacuna.modificar_datos(cambio, nuevo_valor)
                 self.vista.mostrarmensaje(3)
-                return
         self.vista.mostrarmensaje(4)
 
     def eliminarvacuna(self):
@@ -34,7 +33,6 @@ class ControladorVacuna:
             if vacuna.nombre == nombrevacuna:
                 self.listavacunas[self.listavacunas.index(vacuna)].dar_baja()
                 self.vista.mostrarmensaje(6)
-                return
         self.vista.mostrarmensaje(7)
 
     def cargarvacunas(self):
@@ -42,7 +40,7 @@ class ControladorVacuna:
             file = open("Txt/vacuna.txt")
             for line in file:
                 var1 = line.strip().split(",")
-                self.listavacunas.append(Vacuna(var1[0], var1[1], var1[2]))
+                self.listavacunas.append(Vacuna(int(var1[0]), var1[1], var1[2], float(var1[3]), int(var1[4])))
             file.close()
         except FileExistsError or FileNotFoundError:
             self.vista.mostrarmensaje(8)
@@ -55,5 +53,5 @@ class ControladorVacuna:
         file.write(guardado[0:-2])
         file.close()
 
-    def ver_lista_vacuna(self):
+    def ver_lista_vacunas(self):
         self.vista.mostrarvacunas(self.listavacunas)

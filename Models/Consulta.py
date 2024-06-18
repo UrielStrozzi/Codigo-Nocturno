@@ -1,17 +1,22 @@
 class Consulta:
-    def __init__(self, cliente, veterinario, tratamiento, diagnostico, vacuna):
+    def __init__(self, nro: int, observaciones: str, fecha: str, cliente: int, veterinario: int, diagnostico: int, estado: int = 0):
+        self.nro = nro
+        self.observaciones = observaciones
+        self.fecha = fecha
         self.cliente = cliente
-        self.veterinario = veterinario
-        self.tratamiento = tratamiento
-        self.diagnostico = diagnostico
-        self.estado = 0
-        self.vacuna = vacuna
+        self.veterinarios: list[int] = []
+        self.diagnosticos: list[int] = []
+        self.tratamientos: list[int] = []
+        self.vacunas: list[int] = []
+        self.veterinarios.append(veterinario)
+        self.diagnosticos.append(diagnostico)
+        self.estado = estado
 
     def __str__(self):
-        return f"{self.cliente}{self.veterinario}{self.tratamiento}{self.diagnostico}{self.estado}{self.vacuna}"
+        return f"{self.nro};{self.observaciones};{self.fecha};{self.cliente};{self.veterinarios};{self.tratamientos};{self.diagnosticos};{self.vacunas};{self.estado}"
 
     def __repr__(self):
-        return f"{self.cliente}{self.veterinario}{self.tratamiento}{self.diagnostico}{self.estado}{self.vacuna}"
+        return self.__str__()
 
     def dar_alta(self):
         self.estado = 1
@@ -23,19 +28,31 @@ class Consulta:
         return self.estado
 
     def modificar_datos(self, posicion, dato):
-        if posicion == "0":
+        if posicion == 1:
+            self.nro = dato
+        elif posicion == 2:
+            self.observaciones = dato
+        elif posicion == 3:
+            self.fecha = dato
+        elif posicion == 4:
             self.cliente = dato
-        elif posicion == "1":
-            self.veterinario = dato
-        elif posicion == "2":
-            self.tratamiento = dato
-        elif posicion == "3":
-            self.diagnostico = dato
-        elif posicion == "4":
-            self.vacuna = dato
 
-    def calcular_cant_mascotas_por_cliente(self):
-        pass
+    def agregar_datos(self, posicion, dato):
+        if posicion == 1:
+            self.veterinarios.append(dato)
+        elif posicion == 3:
+            self.tratamientos.append(dato)
+        elif posicion == 2:
+            self.diagnosticos.append(dato)
+        elif posicion == 4:
+            self.vacunas.append(dato)
 
-    def calcular_cant_consulta_por_cliente(self):
-        pass
+    def remover_datos(self, posicion, dato):
+        if posicion == 1:
+            self.veterinarios.remove(dato)
+        elif posicion == 3:
+            self.tratamientos.remove(dato)
+        elif posicion == 2:
+            self.diagnosticos.remove(dato)
+        elif posicion == 4:
+            self.vacunas.remove(dato)
