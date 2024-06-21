@@ -10,7 +10,7 @@ class VistaMascota:
         return input("ingrese el nombre de la mascotas: ")
 
     def solicitarfechanacimiento(self):
-        return input("ingrese la fecha de nacimiento de la mascota: ")
+        return input("ingrese la fecha de nacimiento: ")
 
     def solicitarcliente(self):
         return input("ingrese el nombre del cliente: ")
@@ -22,25 +22,25 @@ class VistaMascota:
         return int(input("ingrese el nro del cliente: "))
 
     def solicitarnro_raza(self):
-        return int(input("ingrese el nro de la raza: "))
+        return int(input("ingrese la raza: "))
 
     def mostrarmensaje(self, numero):
         if numero == 1:
-            print("Mascotas creada con exito")
+            print("Raza creada con exito")
         elif numero == 2:
-            print("Que Mascotas quiere modificar: ")
+            print("Que raza quiere modificar: ")
         elif numero == 3:
-            print("Mascotas modificada con éxito")
+            print("Raza modificada con éxito")
         elif numero == 4:
-            print("La Mascotas especificada no fue encontrada")
+            print("La raza especificada no fue encontrada")
         elif numero == 5:
-            print("¿Que Mascotas desea eliminar?")
+            print("¿Que raza desea eliminar?")
         elif numero == 6:
-            print("Mascotas deshabilitada con exito!")
+            print("Raza deshabilitada con exito!")
         elif numero == 7:
-            print("Mascotas no encontrada")
+            print("Raza no encontrada")
         elif numero == 8:
-            print("Archivo de rMascotas no encontrado")
+            print("Archivo de razas no encontrado")
 
     def solicitarcambio(self):
         print("Dato a modificar: \n1-Nombre\n2-Color\n3-Tamano\n4-Pelaje")

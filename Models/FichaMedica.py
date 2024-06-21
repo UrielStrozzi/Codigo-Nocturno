@@ -1,19 +1,21 @@
+from datetime import datetime
+
 class FichaMedica:
-    def __init__(self, nro: int, observaciones: str, fecha: str, tratamientos, consulta, estado: int = 0):
+    def __init__(self, nro: int, observacion: str, mascota, tratamiento, consulta, estado: int = 0):
         self.nro = nro
-        self.observaciones = observaciones
-        self.fecha = fecha
-        self.tratamientos: list[int] = []
-        self.consulta: list[int] = []
-        self.tratamientos.append(tratamientos)
-        self.consulta.append(consulta)
+        self.obsevarcion = observacion
+        self.mascota = mascota
+        self.fecha = datetime.now().date()
+        self.tratamiento = tratamiento
+        self.consulta = consulta
+        self.fecha_alta = ""
         self.estado = estado
 
     def __str__(self):
-        return f"{self.nro};{self.observaciones};{self.fecha};{self.tratamientos};{self.consulta};{self.estado}"
+        return f"{self.nro},{self.obsevarcion},{self.fecha},{self.mascota},{self.tratamiento},{self.consulta},{self.fecha_alta},{self.estado}"
 
     def __repr__(self):
-        return self.__str__()
+        return f"{self.__str__()}"
 
     def dar_alta(self):
         self.estado = 1
@@ -25,25 +27,13 @@ class FichaMedica:
         return self.estado
 
     def modificar_datos(self, posicion, dato):
-        if posicion == 1:
+        if posicion == "1":
             self.nro = dato
-        elif posicion == 2:
-            self.observaciones = dato
-        elif posicion == 3:
-            self.fecha = dato
-        elif posicion == 4:
-            self.tratamientos = dato
-        elif posicion == 5:
+        elif posicion == "2":
+            self.obsevarcion = dato
+        elif posicion == "3":
+            self.mascota = dato
+        elif posicion == "4":
+            self.tratamiento = dato
+        elif posicion == "5":
             self.consulta = dato
-    def agregar_datos(self, posicion, dato):
-        if posicion == 1:
-            self.tratamientos.append(dato)
-        elif posicion == 3:
-            self.consulta.append(dato)
-
-
-    def remover_datos(self, posicion, dato):
-        if posicion == 1:
-            self.tratamientos.remove(dato)
-        elif posicion == 3:
-            self.consulta.remove(dato)

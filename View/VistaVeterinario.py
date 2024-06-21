@@ -1,16 +1,18 @@
 class VistaVeterinario:
+
     def solicitarnro_matricula(self):
-        return int(input("Ingrese numero del Veterinario:"))
+        return int(input("Ingrese numero del cliente: "))
+
     def solicitarnombre(self):
-        return input("ingrese el nombre de la Veterinario: ")
+        return input("ingrese el nombre de la raza: ")
     def solicitarapellido(self):
-        return input("ingrese el apellido del Veterinario: ")
+        return input("ingrese el apellido de la raza: ")
     def solicitardireccion(self):
-        return input("ingrese la direccion del Veterinario: ")
+        return input("ingrese la direccion de la raza: ")
     def solicitartelefono(self):
-        return input("ingrese el telefono del veterinario: ")
+        return input("ingrese el telefono de la raza: ")
     def solicitarespecializacion(self):
-        return input("ingrese el especializacion del veterinario: ")
+        return input("ingrese el especializacion de la raza: ")
 
     def mostrarmensaje(self, numero):
         if numero == 1:
