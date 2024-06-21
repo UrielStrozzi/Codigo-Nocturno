@@ -39,7 +39,7 @@ class VistaMenu:
         elif menu == 18:
             print("Gestionar vacuna\n1-Agregar vacuna\n2-Modificar vacuna\n3-Dar de baja vacuna")
         elif menu == 19:
-            print("Gestionar Ficha Medica\n1-Agregar Ficha Medica\n2-Modificar Ficha Medica\n3-Dar de baja Ficha Medica")
+            print("Gestionar fichas médicas")
         elif menu == 20:
             print("Gestionar consulta\n1-Agregar Consulta\n2-Modificar Consulta\n3-Cerrar Consulta")
         else:

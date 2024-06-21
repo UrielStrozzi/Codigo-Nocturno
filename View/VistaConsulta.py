@@ -18,7 +18,7 @@ class VistaConsulta:
         return int(input("ingrese el numero diagnostico: "))
 
     def solicitarvacuna(self):
-        return int(input("ingrese el numero de la vacuna: "))
+        return int(input("ingrese el pelaje de la raza: "))
 
     def mostrarmensaje(self, numero):
         if numero == 1:
@@ -45,11 +45,11 @@ class VistaConsulta:
                      "\nDe lo contrario, ingrese 0")
 
     def solicitaropcion(self):
-        return int(input("1-Agregar Veterinario.\n"
-                         "2-Agregar un diagnostico\n"
-                         "3-Agregar Tratamiento\n"
-                         "4-Agregar Vacuna\n"
-                         "0-Salir"))
+        return int(input("1-Agregar Veterinario."
+                         "2-Agregar un diagnostico"
+                         "Si desea agregar un tratamiento escriba 3"
+                         "Si desea agregar una vacuna escriba 4"
+                         "De lo contrario, escriba 0"))
 
     def mostrarconsulta(self, lista):
         for raza in lista:

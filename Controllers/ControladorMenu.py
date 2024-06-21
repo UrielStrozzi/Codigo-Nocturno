@@ -7,7 +7,7 @@ from Controllers.ControladorCliente import ControladorCliente
 from Controllers.ControladorConsulta import ControladorConsulta
 from Controllers.ControladorMascota import ControladorMascota
 from Controllers.ControladorVeterinario import ControladorVeterinario
-from Controllers.ControladorFichamedica import ControladorFichaMedica
+
 
 class ControladorMenu:
     def __init__(self):
@@ -20,7 +20,6 @@ class ControladorMenu:
         self.controladormascota = ControladorMascota()
         self.controladorveterinario = ControladorVeterinario()
         self.controladorconsulta = ControladorConsulta()
-        self.controladorfichamedica = ControladorFichaMedica()
 
     def iniciar(self):
         menu = -1
@@ -106,16 +105,6 @@ class ControladorMenu:
                     self.controladorvacuna.modificarvacuna()
                 elif menu == 3:
                     self.controladorvacuna.eliminarvacuna()
-            elif menu == 19:
-                self.vista.mostrarmensaje(menu)
-                menu = self.vista.solicitaropcion()
-                ficha,t, consulta = self.controladorfichamedica.listafichamedica,self.controladortratamiento.listatratamiento, self.controladorconsulta.listaconsulta
-                if menu == 1:
-                    self.controladorfichamedica.agregarfichamedica(ficha,t, consulta)
-                elif menu == 2:
-                    self.controladorfichamedica.modificarfichamedica(ficha,t, consulta)
-                elif menu == 3:
-                    self.controladorfichamedica.eliminarfichamedica()
 
             elif menu == 20:
                 self.vista.mostrarmensaje(menu)

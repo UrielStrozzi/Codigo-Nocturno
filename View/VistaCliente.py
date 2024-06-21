@@ -4,20 +4,20 @@ class VistaCliente:
         return int(input("Ingrese numero del cliente: "))
 
     def solicitarnombre(self):
-        return input("ingrese el nombre del cliente: ")
+        return input("ingrese el nombre de la raza: ")
 
     def solicitarapellido(self):
-        return input("ingrese el apellido del cliente: ")
+        return input("ingrese el apellido de la raza: ")
 
     def solicitardireccion(self):
-        return input("ingrese la direccion del cliente: ")
+        return input("ingrese la direccion de la raza: ")
 
     def solicitartelefono(self):
-        return input("ingrese el telefono del cliente: ")
+        return input("ingrese el telefono de la raza: ")
 
     def mostrarmensaje(self, numero):
         if numero == 1:
-            print("Cliente creado con exito")
+            print("Cliente creada con exito")
         elif numero == 2:
             print("Que cliente quiere modificar: ")
         elif numero == 3:
