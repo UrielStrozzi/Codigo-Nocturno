@@ -1,45 +1,58 @@
 class VistaFichaMedica:
-    def solicitarnombre(self):
-        return input("ingrese el nombre de la raza: ")
-
     def solicitarnro(self):
-        return int(input("ingrese el nro de la raza: "))
+        return int(input("ingrese el nro de la ficha medica: "))
 
-    def solicitarcolor(self):
-        return input("ingrese el color de la raza: ")
+    def solicitarobservacion(self):
+        return input("Ingrese la observacion: ")
 
-    def solicitartamano(self):
-        return input("ingrese el tamano de la raza: ")
+    def solicitartratamiento(self):
+        return int(input("ingrese el numero de tratamiento: "))
 
-    def solicitarpelaje(self):
-        return input("ingrese el pelaje de la raza: ")
+    def solicitarconsulta(self):
+        return int(input("ingrese el numero de consulta: "))
 
-    def mostrarmensaje(self,numero):
+    def solicitarfechaalta(self):
+        return input("Ingrese la fecha de alta: ")
+    def solicitarfechabaja(self):
+        return input("Ingrese la fecha de baja: ")
+
+
+    def mostrarmensaje(self, numero):
         if numero == 1:
-            print("Raza creada con exito")
+            print("Ficha Medica creada con exito")
         elif numero == 2:
-            print("Que raza quiere modificar: ")
+            print("Que ficha medica quiere modificar: ")
         elif numero == 3:
-            print("Raza modificada con éxito")
+            print("Ficha Medica modificada con éxito")
         elif numero == 4:
-            print("La raza especificada no fue encontrada")
+            print("La Ficha Medica especificada no fue encontrada")
         elif numero == 5:
-            print("¿Que raza desea eliminar?")
+            print("¿Que Ficha Medica desea eliminar?")
         elif numero == 6:
-            print("Raza deshabilitada con exito!")
+            print("Ficha Medica deshabilitada con exito!")
         elif numero == 7:
-            print("Raza no encontrada")
+            print("Ficha medica no encontrada")
         elif numero == 8:
-            print("Archivo de razas no encontrado")
+            print("Archivo de Ficha Medica no encontrado")
+        elif numero == 10:
+            print("Opcion no valida")
 
-    def mostrarraza(self, lista):
-        for raza in lista:
-            print(raza)
+    def solicitaranadiroquitar(self):
+        return input("\nSi desea borrar dicho valor, ingrese 1"
+                     "\nDe lo contrario, ingrese 0")
+
+    def solicitaropcion(self):
+        return int(input("\n1-Agregar Tratamiento\n"
+                         "\n2-Agregar Consulta\n"
+                         "0-Salir"))
+
+    def mostrarfichamedica(self, lista):
+        for fichamedica in lista:
+            print(fichamedica)
 
     def solicitarcambio(self):
-        print("Dato a modificar: \n1-Nombre\n2-Color\n3-Tamano\n4-Pelaje")
+        print("Dato a modificar: \n1-Nro\n2-Observaciones\n3-Fecha\n7-tratamientos\n8-Consulta")
         return input()
 
     def solicitarvalorcambio(self):
         return input("Ingrese el valor del cambio: ")
-

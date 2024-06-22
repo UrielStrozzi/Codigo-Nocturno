@@ -11,7 +11,6 @@ class ControladorConsulta:
     def __init__(self):
         self.vista = VistaConsulta()
         self.listaconsulta: list[Consulta] = []
-        self.cargarconsultas()
 
     def agregarconsulta(self, listaclientes: list[Cliente], listaveterinarios: list[Veterinario],
                         listatratamientos: list[Tratamiento], listadiagnosticos: list[Diagnostico],
@@ -27,10 +26,9 @@ class ControladorConsulta:
                         for diagnostico in listadiagnosticos:
                             if diagnostico.nro == nrodiagnostico:
                                 self.listaconsulta.append(Consulta(self.vista.solicitarnro(),
-                                                                   self.vista.solicitarobservacion(),
-                                                                   nrocliente, nroveterinario, nrodiagnostico,
-                                                                   self.vista.solicitardiagnostico(),
-                                                                   self.vista.solicitarvacuna()))
+                                                                   self.vista.solicitarobservacion(),self.vista.solicitarfecha(),
+                                                                   nrocliente, nroveterinario, nrodiagnostico))
+                                self.listaconsulta[-1].dar_alta()
         while opcion != 0:
             self.vista.mostrarmensaje(9)
             opcion = self.vista.solicitaropcion()
@@ -137,7 +135,7 @@ class ControladorConsulta:
 
     def cargarconsultas(self):
         try:
-            file = open("Txt/consulta.txt")
+            file = open("Txt/consulta.txt",encoding='utf-8')
             for line in file:
                 var1 = line.strip().split(";")
                 var1[4] = var1[4][1:-1].split(",")
@@ -145,16 +143,20 @@ class ControladorConsulta:
                 var1[6] = var1[6][1:-1].split(",")
                 var1[7] = var1[7][1:-1].split(",")
                 self.listaconsulta.append(
-                    Consulta(int(var1[0]), var1[1], var1[2], int(var1[3]), int(var1[4][0]), int(var1[5][0]),
+                    Consulta(int(var1[0]), var1[1], var1[2], int(var1[3]), int(var1[4][0]), int(var1[6][0]),
                              int(var1[8])))
                 for i in var1[4][1:]:
-                    self.listaconsulta[-1].agregar_datos(1, int(i))
+                    if len(var1[4][1:]) != 0:
+                        self.listaconsulta[-1].agregar_datos(1, int(i))
                 for i in var1[5][1:]:
-                    self.listaconsulta[-1].agregar_datos(2, int(i))
+                    if len(var1[5][1:]) != 0:
+                        self.listaconsulta[-1].agregar_datos(2, int(i))
                 for i in var1[6]:
-                    self.listaconsulta[-1].agregar_datos(3, int(i))
+                    if len(var1[6]) != 0:
+                        self.listaconsulta[-1].agregar_datos(3, int(i))
                 for i in var1[7]:
-                    self.listaconsulta[-1].agregar_datos(4, int(i))
+                    if var1[7] == "":
+                        self.listaconsulta[-1].agregar_datos(4, int(i))
 
             file.close()
         except FileExistsError or FileNotFoundError:
@@ -164,7 +166,7 @@ class ControladorConsulta:
         guardado = ""
         for consulta in self.listaconsulta:
             guardado += f"{consulta}\n"
-        file = open("Txt/raza.txt", "r+")
+        file = open("Txt/consulta.txt", "r+")
         file.write(guardado[0:-1])
         file.close()
 

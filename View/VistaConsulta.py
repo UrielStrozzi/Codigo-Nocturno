@@ -20,6 +20,10 @@ class VistaConsulta:
     def solicitarvacuna(self):
         return int(input("ingrese el pelaje de la raza: "))
 
+    def solicitarfecha(self):
+        return (input("ingrese la fecha de la consulta: "))
+
+
     def mostrarmensaje(self, numero):
         if numero == 1:
             print("Consulta creada con exito")
@@ -41,22 +45,22 @@ class VistaConsulta:
             print("Opcion no valida")
 
     def solicitaranadiroquitar(self):
-        return input("Si desea borrar dicho valor, ingrese 1"
+        return input("\nSi desea borrar dicho valor, ingrese 1"
                      "\nDe lo contrario, ingrese 0")
 
     def solicitaropcion(self):
         return int(input("1-Agregar Veterinario."
-                         "2-Agregar un diagnostico"
-                         "Si desea agregar un tratamiento escriba 3"
-                         "Si desea agregar una vacuna escriba 4"
-                         "De lo contrario, escriba 0"))
+                         "\n2-Agregar un diagnostico"
+                         "\nSi desea agregar un tratamiento escriba 3"
+                         "\nSi desea agregar una vacuna escriba 4"
+                         "\nDe lo contrario, escriba 0"))
 
     def mostrarconsulta(self, lista):
         for raza in lista:
             print(raza)
 
     def solicitarcambio(self):
-        print("Dato a modificar: \n1-Nro\n2-Observaciones\n3-Fecha\n4-Cliente"
+        print("\nDato a modificar: \n1-Nro\n2-Observaciones\n3-Fecha\n4-Cliente"
               "\n5-Veterinarios\n6-Diagnostico\n7-tratamientos"
               "\n8-Vacunas")
         return input()

@@ -8,7 +8,7 @@ class ControladorPersona():
         self.listaMascotas = []
 
     def cagarArchivo(self):
-        with open("mascotas.txt") as file:
+        with open("mascotas.txt",encoding='utf-8') as file:
             renglones = file.readlines()
         for renglon in renglones:
             nombre, fecha_nac, cliente, raza, ficha_medica = renglon.strip().split(";")

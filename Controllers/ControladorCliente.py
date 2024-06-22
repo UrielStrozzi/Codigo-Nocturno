@@ -7,7 +7,6 @@ class ControladorCliente:
     def __init__(self):
         self.vista = VistaCliente()
         self.listacliente: list[Cliente] = []
-        self.cargarclientes()
 
     def agregarcliente(self):
         self.listacliente.append(Cliente(self.vista.solicitarnro(), self.vista.solicitarnombre(),
@@ -40,7 +39,7 @@ class ControladorCliente:
 
     def cargarclientes(self):
         try:
-            file = open("Txt/cliente.txt")
+            file = open("Txt/cliente.txt",encoding='utf-8')
             for line in file:
                 var1 = line.strip().split(",")
                 self.listacliente.append(Cliente(int(var1[0]), var1[1], var1[2], var1[3], int(var1[4]), int(var1[5])))

@@ -37,7 +37,7 @@ class ControladorRaza:
 
     def cargarrazas(self):
         try:
-            file = open("Txt/raza.txt")
+            file = open("Txt/raza.txt",encoding='utf-8')
             for line in file:
                 var1 = line.strip().split(",")
                 self.listarazas.append(Raza(int(var1[0]), var1[1], var1[2], var1[3], var1[4]))

@@ -8,7 +8,7 @@ class Mascota:
         self.estado = estado
 
     def __str__(self):
-        return f"{self.nro},{self.nombre},{self.fecha_nac},{self.cliente},{self.raza},{self.estado}"
+        return f"{self.nro},{self.nombre},{self.fecha_nac},{self.nrocliente},{self.nroraza},{self.estado}"
 
     def __repr__(self):
         return f"{self.__str__()}"

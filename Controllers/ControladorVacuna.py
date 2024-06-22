@@ -37,7 +37,7 @@ class ControladorVacuna:
 
     def cargarvacunas(self):
         try:
-            file = open("Txt/vacuna.txt")
+            file = open("Txt/vacuna.txt",encoding='utf-8')
             for line in file:
                 var1 = line.strip().split(",")
                 self.listavacunas.append(Vacuna(int(var1[0]), var1[1], var1[2], float(var1[3]), int(var1[4])))
