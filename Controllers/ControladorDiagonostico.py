@@ -6,11 +6,10 @@ class ControladorDiagnostico:
     def __init__(self):
         self.vista = VistaDiagnostico()
         self.listadiagnostico: list[Diagnostico] = []
-        self.cargardiagnostico()
 
     def cargardiagnostico(self):
         try:
-            file = open("Txt/diagnostico.txt")
+            file = open("Txt/diagnostico.txt",encoding='utf-8')
             for line in file:
                 var1 = line.strip().split(",")
                 self.listadiagnostico.append(Diagnostico(int(var1[0]), var1[1], var1[2]))

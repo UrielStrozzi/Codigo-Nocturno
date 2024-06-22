@@ -7,6 +7,7 @@ from Controllers.ControladorCliente import ControladorCliente
 from Controllers.ControladorConsulta import ControladorConsulta
 from Controllers.ControladorMascota import ControladorMascota
 from Controllers.ControladorVeterinario import ControladorVeterinario
+from Controllers.ControladorFichamedica import ControladorFichaMedica
 
 
 class ControladorMenu:
@@ -20,8 +21,14 @@ class ControladorMenu:
         self.controladormascota = ControladorMascota()
         self.controladorveterinario = ControladorVeterinario()
         self.controladorconsulta = ControladorConsulta()
+        self.controladorfichamedica = ControladorFichaMedica()
+
 
     def iniciar(self):
+        self.controladorcliente.cargarclientes()
+        self.controladorconsulta.cargarconsultas()
+        self.controladordiagnostico.cargardiagnostico()
+
         menu = -1
         while menu != 0:
             self.vista.mostraropciones()
@@ -44,6 +51,9 @@ class ControladorMenu:
                 self.controladorcliente.ver_lista_clientes()
             elif menu == 8:
                 self.controladorcliente.calcular_cantidad_mascotasxcliente(self.controladormascota.listamascotas)
+            elif menu == 9:
+                self.vista.mostrarmensaje(9)
+                self.controladormascota.calcularconsultaxmascota(self.controladorconsulta.listaconsulta)
             elif menu == 13:
                 self.vista.mostrarmensaje(menu)
                 menu = self.vista.solicitaropcion()
@@ -105,7 +115,16 @@ class ControladorMenu:
                     self.controladorvacuna.modificarvacuna()
                 elif menu == 3:
                     self.controladorvacuna.eliminarvacuna()
-
+            elif menu == 19:
+                self.vista.mostrarmensaje(menu)
+                menu = self.vista.solicitaropcion()
+                t, consulta = self.controladortratamiento.listatratamiento, self.controladorconsulta.listaconsulta
+                if menu == 1:
+                    self.controladorfichamedica.agregarfichamedica(t, consulta)
+                elif menu == 2:
+                    self.controladorfichamedica.modificarfichamedica(t, consulta)
+                elif menu == 3:
+                    self.controladorfichamedica.eliminarfichamedica()
             elif menu == 20:
                 self.vista.mostrarmensaje(menu)
                 menu = self.vista.solicitaropcion()
@@ -116,18 +135,18 @@ class ControladorMenu:
                     self.controladorconsulta.modificarconsulta(c, v, d, t, vac)
                 elif menu == 3:
                     self.controladorconsulta.eliminarconsulta()
+                self.controladorconsulta.guardarconsulta()
+
             else:
                 self.vista.mostrarmensaje(menu)
 
             """
-            elif menu == 9:
-                calcularCantConsulXMascot()
+            
             elif menu == 10:
                 calcular_tratam_aplicados()
             elif menu == 11:
                 calcularRankingDiagnos()
             elif menu == 12:
                 calcularCantRazasXDiagnos()
-            elif menu == 18:
-                gestionar_fichas_medicas()
+            
             """

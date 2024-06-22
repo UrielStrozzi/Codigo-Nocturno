@@ -43,8 +43,11 @@ class VistaMascota:
             print("Archivo de razas no encontrado")
 
     def solicitarcambio(self):
-        print("Dato a modificar: \n1-Nombre\n2-Color\n3-Tamano\n4-Pelaje")
+        print("Dato a modificar: \n1-Numero\n2-Nombre\n3-Color\n4-Tamano\n5-Pelaje")
         return input()
 
     def solicitarvalorcambio(self):
         return input("Ingrese el valor del cambio: ")
+
+    def mostrarnroconsultaxmascota(self, nombremascota, acu):
+        print(f"El numero de consultas que tiene {nombremascota} es: {acu}")

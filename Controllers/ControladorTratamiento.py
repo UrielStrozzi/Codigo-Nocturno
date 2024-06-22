@@ -42,7 +42,7 @@ class ControladorTratamiento:
 
     def cargartratamiento(self):
         try:
-            with open("Txt/tratamiento.txt") as file:
+            with open("Txt/tratamiento.txt",encoding='utf-8') as file:
                 for line in file:
                     var1 = line.strip().split(",")
                     if len(var1) >= 4:  # Asegúrate de que hay suficientes elementos

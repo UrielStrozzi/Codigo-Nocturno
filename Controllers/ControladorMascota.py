@@ -1,5 +1,6 @@
 from View.VistaMascota import VistaMascota
 from Models.Mascota import Mascota
+from Models.Consulta import Consulta
 from Models import Cliente, Raza
 
 
@@ -52,7 +53,7 @@ class ControladorMascota:
 
     def cargarmascota(self):
         try:
-            file = open("Txt/mascotas.txt")
+            file = open("Txt/mascotas.txt",encoding='utf-8')
             for line in file:
                 var1 = line.strip().split(",")
                 self.listamascotas.append(Mascota(int(var1[0]), var1[1], var1[2], int(var1[3]), int(var1[4]), int(var1[5])))
@@ -70,3 +71,14 @@ class ControladorMascota:
 
     def ver_lista_mascotas(self):
         self.vista.mostrarListaMascota(self.listamascotas)
+
+
+    def calcularconsultaxmascota(self,listaconsulta: list[Consulta]):
+        nromascota = self.vista.solicitarnro()
+        acu = 0
+        for consulta in listaconsulta:
+            if consulta.nro == nromascota:
+                acu += 1
+        for mascota in self.listamascotas:
+                if mascota.nro == nromascota:
+                    self.vista.mostrarnroconsultaxmascota(self.listamascotas[self.listamascotas.index(mascota)].nombre,acu)

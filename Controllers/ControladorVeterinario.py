@@ -39,7 +39,7 @@ class ControladorVeterinario:
 
     def cargarveterinario(self):
         try:
-            file = open("Txt/veterinario.txt")
+            file = open("Txt/veterinario.txt",encoding='utf-8')
             for line in file:
                 var1 = line.strip().split(",")
                 self.listaveterinario.append(
